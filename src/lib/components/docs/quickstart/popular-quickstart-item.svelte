@@ -9,10 +9,15 @@
   href={path}
   variant="cta"
   size="large"
-  class="flex items-center text-black font-semibold"
+  class="flex items-center group"
 >
   <div class="w-12 flex-shrink-0">
-    <img src={icon} alt={`${name}-icon`} width="24px" />
+    <img
+      class="grayscale group-hover:grayscale-0 transition-all duration-200"
+      src={icon}
+      alt={`${name}-icon`}
+      width="24px"
+    />
   </div>
   <span class="truncate"> More on {name}</span>
 </LinkButton>

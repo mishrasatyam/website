@@ -24,13 +24,11 @@
     <img
       src={`/${logo}`}
       {alt}
-      class="mr-micro transition duration-200 grayscale group-focus:grayscale-0 group-hover:grayscale-0"
+      class="mr-micro grayscale group-focus:grayscale-0 group-hover:grayscale-0"
       width="24"
       height="24"
     />
-    <div
-      class="text-gray-800 transition duration-200 group-focus:text-black group-hover:text-black"
-    >
+    <div class="text-black">
       {title}
     </div>
   </div>
