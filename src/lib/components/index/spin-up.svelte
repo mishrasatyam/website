@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { ExtensionButton } from "$lib/types/extension-button.type";
+  import LinkButton from "$lib/components/ui-library/link-button";
   import Section from "../section.svelte";
 
   const buttons: ExtensionButton[] = [
@@ -36,11 +37,12 @@
     </p>
     <div class="buttons-wrapper fl">
       {#each buttons as { href, icon, text }}
-        <a
+        <LinkButton
+          variant="white"
+          size="medium"
           {href}
           target="_blank"
           rel="noopener"
-          class="text-p-medium leading-[150%] flex items-center px-macro py-3 justify-center bg-white rounded-xl text-black shadow-light hover:bg-off-white focus:bg-off-white"
         >
           <img
             class="inline-block h-6 w-6 mr-2"
@@ -50,7 +52,7 @@
             height="24"
           />
           {text}
-        </a>
+        </LinkButton>
       {/each}
     </div>
   </div>
