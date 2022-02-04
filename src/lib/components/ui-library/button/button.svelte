@@ -1,10 +1,11 @@
 <script lang="ts">
   import { current_component } from "svelte/internal";
   import { forwardEventsBuilder } from "../utils/eventforwarder";
+  import type { ButtonSizes, ButtonVariations } from "./button";
   let className: string = "";
   export { className as class };
-  export let size: "small" | "medium" | "large" = "medium";
-  export let variant: "primary" | "secondary" | "cta" | "tertiary" | "unstyled";
+  export let size: ButtonSizes = "medium";
+  export let variant: ButtonVariations;
   export let disabled: boolean = false;
 
   const forwardEvents = forwardEventsBuilder(current_component);
@@ -25,6 +26,10 @@
 
   .tertiary {
     @apply bg-black text-white hover:bg-black-hover;
+  }
+
+  .white {
+    @apply bg-off-white text-black hover:bg-white focus:bg-white hover:text-black focus:text-black;
   }
 
   .disabled {

@@ -9,3 +9,13 @@ export declare class Button extends Component {
 
   $$events_def: { click: MouseEvent } & Component["$$events_def"];
 }
+
+export declare type ButtonVariations =
+  | "primary"
+  | "secondary"
+  | "cta"
+  | "tertiary"
+  | "unstyled"
+  | "white";
+
+export declare type ButtonSizes = "small" | "medium" | "large";

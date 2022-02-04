@@ -9,3 +9,13 @@ export declare class LinkButtonType extends Component {
 
   $$events_def: { click: MouseEvent; mouseover: MouseEvent };
 }
+
+export declare type ButtonVariations =
+  | "primary"
+  | "secondary"
+  | "cta"
+  | "tertiary"
+  | "unstyled"
+  | "white";
+
+export declare type ButtonSizes = "small" | "medium" | "large";
