@@ -71,7 +71,7 @@
 <Faqs />
 
 <SectionCommon
-  title="Open source is in our DNA"
+  title="Open source is in our&nbsp;DNA"
   text="Gitpod is open-source and so are all the tools we develop and contribute to."
 >
   <div
