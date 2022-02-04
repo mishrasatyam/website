@@ -55,7 +55,10 @@
     class="w-full"
     textAlign="left"
   >
-    <div slot="content" class="buttons-wrapper pt-x-small">
+    <div
+      slot="content"
+      class="flex justify-center items-center flex-wrap space-x-4 pt-x-small"
+    >
       <TwitterFollowButton variant="primary" />
       <LinkButton
         target="_blank"

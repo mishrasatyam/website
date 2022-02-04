@@ -24,7 +24,7 @@
 >
   <img src={svgSrc} {alt} class="mx-auto" />
   <p class="mt-medium mb-micro">Download {text}</p>
-  <div class="buttons-wrapper justify-center">
+  <div class="flex justify-center items-center flex-wrap space-x-4">
     <LinkButton
       style="min-width: 0"
       variant="primary"

@@ -35,7 +35,7 @@
       Bitbucket projects to easily spin up a dev environment with a single
       click.
     </p>
-    <div class="buttons-wrapper fl">
+    <div class="flex justify-center items-center flex-wrap space-x-4 fl">
       {#each buttons as { href, icon, text }}
         <LinkButton
           variant="white"

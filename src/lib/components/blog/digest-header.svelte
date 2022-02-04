@@ -10,7 +10,10 @@
   textClassNames="text-medium mb-x-small"
   tight={true}
 >
-  <div slot="content" class="buttons-wrapper justify-center">
+  <div
+    slot="content"
+    class="flex justify-center items-center flex-wrap space-x-4"
+  >
     <LinkButton
       variant="primary"
       size="medium"

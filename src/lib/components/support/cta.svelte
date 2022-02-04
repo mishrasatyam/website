@@ -12,7 +12,7 @@
     <p class="mb-x-small">
       Please get in contact and we’ll get onto it right away.
     </p>
-    <div class="buttons-wrapper">
+    <div class="flex justify-center items-center flex-wrap space-x-4">
       <LinkButton
         target="_blank"
         variant="primary"

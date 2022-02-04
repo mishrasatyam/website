@@ -45,6 +45,10 @@
     @apply block h-6 w-6 mr-micro;
     flex: 0 0 1.5rem;
   }
+
+  .buttons-wrapper {
+    @apply flex justify-center items-center flex-wrap space-x-4;
+  }
 </style>
 
 <Section class="feature-container-section">
