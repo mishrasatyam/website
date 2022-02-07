@@ -31,7 +31,7 @@
 />
 <AnnouncementBanner />
 <div class="flex">
-  <div class="content-docs prose max-w-none flex-auto min-w-0 xl:w-2/3">
+  <div class="content-docs prose px-4 max-w-none flex-auto min-w-0 xl:w-2/3">
     <slot />
   </div>
   <OnThisPageNav />
