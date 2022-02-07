@@ -8,6 +8,8 @@ export declare class Button extends Component {
     Component["$$prop_def"];
 
   $$events_def: { click: MouseEvent } & Component["$$events_def"];
+
+  $$slot_def: { default: {}; image: {} };
 }
 
 export declare type ButtonVariations =

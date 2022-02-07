@@ -8,6 +8,7 @@ export declare class LinkButtonType extends Component {
     Component["$$prop_def"];
 
   $$events_def: { click: MouseEvent; mouseover: MouseEvent };
+  $$slot_def: { default: {}; image: {} };
 }
 
 export declare type ButtonVariations =

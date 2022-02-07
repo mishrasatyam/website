@@ -59,5 +59,6 @@
     : variant} {size} {className}"
   {...$$restProps}
 >
+  <slot name="image" />
   <slot />
 </button>

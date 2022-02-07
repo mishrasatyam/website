@@ -50,7 +50,12 @@
         variant="unstyled"
         size="large"
       >
-        <img src={icon.src} alt={icon.alt} class="h-6 w-8 mr-micro" />
+        <img
+          slot="image"
+          src={icon.src}
+          alt={icon.alt}
+          class="h-6 w-8 mr-micro"
+        />
         {text}</LinkButton
       >
     </div>

@@ -11,7 +11,7 @@
   size="large"
   class="flex items-center group"
 >
-  <div class="w-12 flex-shrink-0">
+  <div slot="image" class="w-12 flex-shrink-0">
     <img
       class="grayscale group-hover:grayscale-0 transition-all duration-200"
       src={icon}
