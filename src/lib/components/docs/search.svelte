@@ -61,16 +61,12 @@
 </script>
 
 <style lang="postcss">
-  .input-container {
-    @media (max-width: 768px) {
-      &:not(.topics-active) {
-        display: none;
-      }
-    }
-  }
-
   @media (max-width: 768px) {
     .gitpod-button:not(.topics-active) {
+      @apply hidden;
+    }
+
+    .input-container:not(.topics-active) {
       @apply hidden;
     }
   }
