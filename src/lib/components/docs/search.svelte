@@ -124,7 +124,8 @@
     </div>
   </div>
   <div
-    class="flex-shrink-0 pl-8 gitpod-button {$topicsState || isSupportPage
+    class="flex-shrink-0 w-1/4 flex justify-start pl-8 gitpod-button {$topicsState ||
+    isSupportPage
       ? 'topics-active'
       : ''}"
   >
