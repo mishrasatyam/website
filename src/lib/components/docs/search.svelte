@@ -15,6 +15,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import topicsState from "./states/topics-state";
+  import EditInGitpod from "./edit-in-gitpod.svelte";
   import { page } from "$app/stores";
   let clazz = "";
   export { clazz as class };
@@ -62,11 +63,15 @@
 <style lang="postcss">
   .input-container {
     @media (max-width: 768px) {
-      @apply mb-4;
-
       &:not(.topics-active) {
         display: none;
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .gitpod-button:not(.topics-active) {
+      @apply hidden;
     }
   }
 
@@ -99,23 +104,34 @@
 
 <svelte:body on:keydown={handleBodyKeyDown} />
 
-<div
-  class={`input-container relative bg-white rounded-xl w-full shadow-normal mb-12 ${
-    $topicsState || isSupportPage ? "topics-active" : ""
-  } ${containerClasses}`}
->
-  <label for={docSearchInputSelector} class="sr-only">Search</label>
-  <img
-    class="absolute top-1/2 left-3 -translate-y-1/2 pointer-events-none h-xx-small w-xx-small lef {iconClasses}"
-    src="/svg/mag-glass.svg"
-    alt="Search"
-    aria-hidden="true"
-  />
-  <input
-    bind:this={docSearchInput}
-    type="search"
-    {placeholder}
-    id={docSearchInputSelector}
-    class="box-border block w-full text-p-medium h-small pl-11 pr-3 py-2 border border-transparent leading-5 text-gray-600 placeholder-gray-500 focus:outline-none focus:bg-none focus:border-white focus:ring-white focus:text-gray-900 {clazz}"
-  />
+<div class="flex items-center mb-8 md:mb-12">
+  <div class="w-3/4">
+    <div
+      class={`w-full input-container relative bg-white rounded-xl shadow-normal  ${
+        $topicsState || isSupportPage ? "topics-active" : ""
+      } ${containerClasses}`}
+    >
+      <label for={docSearchInputSelector} class="sr-only">Search</label>
+      <img
+        class="absolute top-1/2 left-3 -translate-y-1/2 pointer-events-none h-xx-small w-xx-small lef {iconClasses}"
+        src="/svg/mag-glass.svg"
+        alt="Search"
+        aria-hidden="true"
+      />
+      <input
+        bind:this={docSearchInput}
+        type="search"
+        {placeholder}
+        id={docSearchInputSelector}
+        class="box-border block w-full text-p-medium h-small pl-11 pr-3 py-2 border border-transparent leading-5 text-gray-600 placeholder-gray-500 focus:outline-none focus:bg-none focus:border-white focus:ring-white focus:text-gray-900 {clazz}"
+      />
+    </div>
+  </div>
+  <div
+    class="flex-shrink-0 pl-8 gitpod-button {$topicsState || isSupportPage
+      ? 'topics-active'
+      : ''}"
+  >
+    <EditInGitpod />
+  </div>
 </div>

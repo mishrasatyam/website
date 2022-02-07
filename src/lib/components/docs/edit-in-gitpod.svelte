@@ -11,7 +11,7 @@
   const href = `${BASE_PATH}${currentPage}.md`;
 </script>
 
-<div class="flex justify-end mb-micro">
+<div class="flex justify-end">
   <a
     {href}
     target="_blank"
