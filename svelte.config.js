@@ -74,6 +74,7 @@ const config = {
             },
             customizeTOCItem: (toc, heading) => {
               if (heading.tagName !== "h2") {
+                toc.children[0].children[0].value = `> ${toc.children[0].children[0].value}`;
                 toc.properties.className = `${
                   toc.properties.className || ""
                 } ml-4`;
