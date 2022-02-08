@@ -160,6 +160,7 @@
           aria-label="Do you have any other feedback?"
           placeholder="Do you have any other feedback?"
           id="otherFeedback"
+          hasError={isFormDirty && !formData.otherFeedback.valid}
           name="otherFeedback"
           bind:value={formData.otherFeedback.value}
           element={formData.otherFeedback.el}

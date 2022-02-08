@@ -236,6 +236,7 @@
             <label for="message">Your message*</label>
             <Textarea
               id="message"
+              hasError={isFormDirty && !formData.message.valid}
               bind:value={formData.message.value}
               element={formData.message.el}
               on:change={() => {
