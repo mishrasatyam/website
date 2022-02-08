@@ -2,6 +2,7 @@
   // Credit: www.vercel.com/docs 🙏
   import { page } from "$app/stores";
   import { trackEvent } from "../segment.svelte";
+  import Textarea from "$lib/components/ui-library/textarea";
 
   let selectedEmotion: number;
   let note = "";
@@ -82,7 +83,7 @@
           <div class="mt-x-small">
             <label for="note">Feedback</label>
             <div>
-              <textarea
+              <Textarea
                 bind:value={note}
                 id="note"
                 width="100%"

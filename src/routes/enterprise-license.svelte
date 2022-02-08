@@ -6,6 +6,7 @@
   import { goto } from "$app/navigation";
   import type { Form } from "$lib/types/form.type";
   import OpenGraph from "$lib/components/open-graph.svelte";
+  import Textarea from "$lib/components/ui-library/textarea";
 
   import { countryList } from "$lib/contents/license-key";
   import type { Email } from "../functions/submit-form";
@@ -241,16 +242,17 @@
       </label>
     </div>
 
+    <!-- svelte-ignore a11y-label-has-associated-control -->
     <label class="mt-macro half">
       <p>
         Optionally, tell us more about your interest in Gitpod. What challenges
         are you looking to solve? How can we help?
       </p>
-      <textarea
+      <Textarea
         cols="30"
         rows="4"
         bind:value={formData.message.value}
-        bind:this={formData.message.el}
+        element={formData.message.el}
         name="message"
       />
     </label>

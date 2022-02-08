@@ -1,13 +1,9 @@
 input,
-textarea,
 select {
   all: unset;
   font: inherit;
   color: var(--dark-grey);
   box-sizing: border-box;
-}
-textarea {
-  @apply whitespace-pre-wrap;
 }
 [type="radio"],
 [type="checkbox"] {
@@ -36,8 +32,7 @@ legend,
   margin-bottom: 0.5rem;
 }
 [type="email"],
-[type="text"],
-textarea {
+[type="text"] {
   width: 100%;
 }
 form li {
@@ -57,7 +52,6 @@ legend {
 [type="text"],
 [type="number"],
 [type="radio"] + label,
-textarea,
 select {
   border: 1px solid var(--divider);
   padding: 0.5rem 1rem;

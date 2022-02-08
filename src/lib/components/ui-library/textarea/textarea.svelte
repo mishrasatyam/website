@@ -1,7 +1,7 @@
 <script lang="ts">
   export let value: string;
   let className = "";
-  export let element: HTMLElement;
+  export let element: HTMLElement = null;
   //TODO ADD Eventforwarder
   export { className as class };
 </script>
