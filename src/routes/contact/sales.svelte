@@ -9,6 +9,7 @@
   import SubmissionSuccess from "$lib/components/submission-success.svelte";
   import Section from "$lib/components/section.svelte";
   import { trackEvent, trackIdentity } from "$lib/components/segment.svelte";
+  import Textarea from "$lib/components/ui-library/textarea";
   import Header from "$lib/components/header.svelte";
 
   const selfHostingSubject = "Self-hosting";
@@ -321,10 +322,11 @@
           </li>
           <li class:error={isFormDirty && !formData.message.valid}>
             <label for="message">Your message*</label>
-            <textarea
+
+            <Textarea
               id="message"
               bind:value={formData.message.value}
-              bind:this={formData.message.el}
+              element={formData.message.el}
               on:change={() => {
                 formData.message.valid =
                   formData.message.value && formData.message.el.validity.valid;
