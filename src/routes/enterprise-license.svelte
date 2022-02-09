@@ -241,22 +241,17 @@
         </select>
       </label>
     </div>
-
-    <!-- svelte-ignore a11y-label-has-associated-control -->
-    <label class="mt-macro half">
-      <p>
-        Optionally, tell us more about your interest in Gitpod. What challenges
-        are you looking to solve? How can we help?
-      </p>
+    <div class="mt-macro">
       <Textarea
+        label="Optionally, tell us more about your interest in Gitpod. What challenges
+        are you looking to solve? How can we help?"
         cols="30"
         rows="4"
         bind:value={formData.message.value}
         bind:element={formData.message.el}
         name="message"
       />
-    </label>
-
+    </div>
     <button
       type="submit"
       class="btn-conversion title"

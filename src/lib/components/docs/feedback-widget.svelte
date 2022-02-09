@@ -81,21 +81,19 @@
         </div>
         {#if selectedEmotion}
           <div class="mt-x-small">
-            <label for="note">Feedback</label>
-            <div>
-              <Textarea
-                bind:value={note}
-                id="note"
-                width="100%"
-                placeholder="Your feedback..."
-                aria-label="Feedback input"
-                autocapitalize="off"
-                autocomplete="off"
-                autocorrect="off"
-                type="text"
-                class="mb-0"
-              />
-            </div>
+            <Textarea
+              label="Feedback"
+              bind:value={note}
+              id="note"
+              width="100%"
+              placeholder="Your feedback..."
+              aria-label="Feedback input"
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+              type="text"
+              class="mb-0"
+            />
             <div>
               <span
                 ><button

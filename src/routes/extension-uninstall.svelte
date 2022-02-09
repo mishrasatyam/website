@@ -155,7 +155,7 @@
           </ul>
         </fieldset>
       </li>
-      <li class:error={isFormDirty && !formData.otherFeedback.valid}>
+      <li>
         <Textarea
           aria-label="Do you have any other feedback?"
           placeholder="Do you have any other feedback?"

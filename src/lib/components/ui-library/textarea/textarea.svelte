@@ -2,6 +2,7 @@
   export let value: string;
   let className: string = "";
   export let name: string = "";
+  export let label: string = "";
   export let element: HTMLElement = null;
   export let hasError: boolean = false;
   //TODO ADD Eventforwarder
@@ -14,14 +15,20 @@
   }
 </style>
 
+{#if label}
+  <label class:error={hasError} for={label}>{@html label}</label>
+{/if}
 <textarea
+  id={label}
   on:change
   bind:value
   bind:this={element}
   class:error={hasError}
-  class="whitespace-pre-wrap bg-transparent text-dark-grey box-border w-full rounded-lg py-2 px-4 border-[1px] border-divider {className}"
+  class="whitespace-pre-wrap resize-none bg-transparent text-dark-grey box-border w-full rounded-lg py-2 px-4 border-[1px] border-divider {className}"
   {...$$restProps}
 />
 {#if hasError}
-  <legend class="text-xs">Please fill out the {name} field</legend>
+  <legend class:error={hasError} class="text-xs"
+    >Please fill out the {name ? name : ""} field</legend
+  >
 {/if}

@@ -232,10 +232,10 @@
               autocomplete="email"
             />
           </li>
-          <li class:error={isFormDirty && !formData.message.valid}>
-            <label for="message">Your message*</label>
+          <li>
             <Textarea
               id="message"
+              label="Your message*"
               hasError={isFormDirty && !formData.message.valid}
               bind:value={formData.message.value}
               bind:element={formData.message.el}

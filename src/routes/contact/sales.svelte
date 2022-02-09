@@ -320,10 +320,9 @@
               </select>
             </label>
           </li>
-          <li class:error={isFormDirty && !formData.message.valid}>
-            <label for="message">Your message*</label>
-
+          <li>
             <Textarea
+              label="Your message*"
               id="message"
               hasError={isFormDirty && !formData.message.valid}
               bind:value={formData.message.value}
