@@ -16,7 +16,9 @@
 </style>
 
 {#if label}
-  <label class:error={hasError} for={label}>{@html label}</label>
+  <label class="text-dark-grey" class:error={hasError} for={label}
+    >{@html label}</label
+  >
 {/if}
 <textarea
   id={label}
@@ -24,7 +26,7 @@
   bind:value
   bind:this={element}
   class:error={hasError}
-  class="whitespace-pre-wrap resize-none bg-transparent text-dark-grey box-border w-full rounded-lg py-2 px-4 border-[1px] border-divider {className}"
+  class="whitespace-pre-wrap resize-none bg-transparent text-[#000000] box-border w-full rounded-lg py-2 px-4 border-[1px] border-divider {className}"
   {...$$restProps}
 />
 {#if hasError}
