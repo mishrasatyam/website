@@ -103,7 +103,7 @@
 <div class="flex items-center mb-8 md:mb-12">
   <div class="w-3/4 px-4">
     <div
-      class={`w-full input-container relative bg-white rounded-xl shadow-normal  ${
+      class={`w-full input-container relative bg-off-white rounded-2xl shadow-normal  ${
         $topicsState || isSupportPage ? "topics-active" : ""
       } ${containerClasses}`}
     >
