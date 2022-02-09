@@ -18,6 +18,6 @@
   bind:value
   bind:this={element}
   class:error={hasError}
-  class=" whitespace-pre-wrap text-dark-grey box-border w-full rounded-lg py-2 px-4 border-[1px] border-divider {className}"
+  class="whitespace-pre-wrap bg-transparent text-dark-grey box-border w-full rounded-lg py-2 px-4 border-[1px] border-divider {className}"
   {...$$restProps}
 />
