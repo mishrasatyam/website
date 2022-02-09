@@ -163,7 +163,7 @@
           hasError={isFormDirty && !formData.otherFeedback.valid}
           name="otherFeedback"
           bind:value={formData.otherFeedback.value}
-          element={formData.otherFeedback.el}
+          bind:element={formData.otherFeedback.el}
           cols="20"
           rows="4"
           on:change={() => {

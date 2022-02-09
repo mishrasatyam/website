@@ -252,7 +252,7 @@
         cols="30"
         rows="4"
         bind:value={formData.message.value}
-        element={formData.message.el}
+        bind:element={formData.message.el}
         name="message"
       />
     </label>

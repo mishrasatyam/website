@@ -327,7 +327,7 @@
               id="message"
               hasError={isFormDirty && !formData.message.valid}
               bind:value={formData.message.value}
-              element={formData.message.el}
+              bind:element={formData.message.el}
               on:change={() => {
                 formData.message.valid =
                   formData.message.value && formData.message.el.validity.valid;
