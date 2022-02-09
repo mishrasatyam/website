@@ -1,6 +1,7 @@
 <script lang="ts">
   export let value: string;
-  let className = "";
+  let className: string = "";
+  export let name: string = "";
   export let element: HTMLElement = null;
   export let hasError: boolean = false;
   //TODO ADD Eventforwarder
@@ -21,3 +22,6 @@
   class="whitespace-pre-wrap bg-transparent text-dark-grey box-border w-full rounded-lg py-2 px-4 border-[1px] border-divider {className}"
   {...$$restProps}
 />
+{#if hasError}
+  <legend class="text-xs">Please fill out the {name} field</legend>
+{/if}
