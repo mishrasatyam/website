@@ -13,6 +13,8 @@
 <style lang="postcss">
   select {
     background-position: right 1em top 50%, 0 0;
+    background-image: url("/arrow-grey.svg"),
+      linear-gradient(to bottom, #ffffff 0%, #f9f9f9 100%);
     background-size: 1.25em auto, 100%;
     background-repeat: no-repeat, repeat;
     -moz-appearance: none;
