@@ -103,10 +103,6 @@
   .title:not(:first-child) {
     margin-top: var(--medium);
   }
-
-  .option {
-    @apply text-gray-800;
-  }
 </style>
 
 <OpenGraph
