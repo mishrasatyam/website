@@ -1,4 +1,5 @@
-input,
+[type="radio"],
+[type="checkbox"],
 select {
   all: unset;
   font: inherit;
@@ -24,17 +25,12 @@ select {
   width: 100%;
 }
 label,
-legend,
-[type="email"],
-[type="text"] {
+legend {
   display: block;
   color: var(--dark-grey);
   margin-bottom: 0.5rem;
 }
-[type="email"],
-[type="text"] {
-  width: 100%;
-}
+
 form li {
   margin-bottom: 2rem;
 }
@@ -48,8 +44,7 @@ fieldset {
 legend {
   flex: 100%;
 }
-[type="email"],
-[type="text"],
+
 [type="number"],
 [type="radio"] + label,
 select {
