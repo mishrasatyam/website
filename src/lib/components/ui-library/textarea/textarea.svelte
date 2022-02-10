@@ -16,8 +16,10 @@
 </style>
 
 {#if label}
-  <label class="text-dark-grey" class:error={hasError} for={label}
-    >{@html label}</label
+  <label
+    class="text-dark-grey cursor-pointer block mb-2"
+    class:error={hasError}
+    for={label}>{@html label}</label
   >
 {/if}
 <textarea
@@ -30,7 +32,7 @@
   {...$$restProps}
 />
 {#if hasError}
-  <legend class:error={hasError} class="text-xs"
+  <legend class:error={hasError} class="text-xs block mb-2"
     >Please fill out the {name ? name : ""} field</legend
   >
 {/if}

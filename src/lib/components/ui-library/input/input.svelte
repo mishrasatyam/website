@@ -17,35 +17,36 @@
   }
 </style>
 
-<div>
-  {#if label}
-    <label class="text-dark-grey" class:error={hasError} for={label}
-      >{@html label}</label
-    >
-  {/if}
-  {#if type === "text"}
-    <input
-      id={label}
-      class:error={hasError}
-      on:change
-      bind:value
-      bind:this={element}
-      class="bg-off-white text-[#000000] box-border w-full rounded-lg py-2 px-4 border-[1px] border-divider {className}"
-      type="text"
-      {...$$restProps}
-    />
-  {:else if type === "email"}
-    <input
-      class:error={hasError}
-      on:change
-      bind:value
-      class="bg-off-white text-[#000000] box-border w-full rounded-lg py-2 px-4 border-[1px] border-divider {className}"
-      type="email"
-      {...$$restProps}
-    />{/if}
-  {#if hasError}
-    <legend class:error={hasError} class="text-xs">
-      Please fill out the {name ? name : ""} field
-    </legend>
-  {/if}
-</div>
+{#if label}
+  <label
+    class="text-dark-grey cursor-pointer block mb-2"
+    class:error={hasError}
+    for={label}>{@html label}</label
+  >
+{/if}
+{#if type === "text"}
+  <input
+    id={label}
+    class:error={hasError}
+    on:change
+    bind:value
+    bind:this={element}
+    class="bg-off-white text-[#000000] box-border w-full rounded-lg py-2 px-4 border-[1px] border-divider {className}"
+    type="text"
+    {...$$restProps}
+  />
+{:else if type === "email"}
+  <input
+    class:error={hasError}
+    on:change
+    bind:value
+    bind:this={element}
+    class="bg-off-white text-[#000000] box-border w-full rounded-lg py-2 px-4 border-[1px] border-divider {className}"
+    type="email"
+    {...$$restProps}
+  />{/if}
+{#if hasError}
+  <legend class:error={hasError} class="text-xs block mb-2">
+    Please fill out the {name ? name : ""} field
+  </legend>
+{/if}

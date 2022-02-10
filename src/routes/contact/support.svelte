@@ -12,6 +12,7 @@
   import { trackEvent, trackIdentity } from "$lib/components/segment.svelte";
   import Header from "$lib/components/header.svelte";
   import Textarea from "$lib/components/ui-library/textarea";
+  import Input from "$lib/components/ui-library/input";
 
   const studentUnlimitedSubject = "Educational Discount Verification";
 
@@ -174,7 +175,7 @@
         <ul>
           <li class:error={isFormDirty && !formData.selectedSubject.valid}>
             <fieldset>
-              <legend>Please choose a subject</legend>
+              <legend>Please choose a subject*</legend>
               <ul>
                 {#each subjects as subject, index}
                   <li>
@@ -199,12 +200,13 @@
               </ul>
             </fieldset>
           </li>
-          <li class:error={isFormDirty && !formData.name.valid}>
-            <label for="name">Name*</label>
-            <input
+          <li>
+            <Input
+              hasError={isFormDirty && !formData.name.valid}
+              label="Name*"
               id="name"
               bind:value={formData.name.value}
-              bind:this={formData.name.el}
+              bind:element={formData.name.el}
               on:change={() => {
                 formData.name.valid =
                   formData.name.value && formData.name.el.checkValidity();
@@ -214,16 +216,17 @@
             />
           </li>
           <li class:error={isFormDirty && !formData.email.valid}>
-            <label for="email"
+            <label class="cursor-pointer" for="email"
               >E-mail*
               {#if isStudentEmailNoteShown}
                 (Please use your student or faculty email)
               {/if}
             </label>
-            <input
+            <Input
+              hasError={isFormDirty && !formData.email.valid}
               id="email"
               bind:value={formData.email.value}
-              bind:this={formData.email.el}
+              bind:element={formData.email.el}
               on:change={() => {
                 formData.email.valid =
                   formData.email.value && formData.email.el.checkValidity();

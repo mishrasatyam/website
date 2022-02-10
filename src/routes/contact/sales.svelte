@@ -11,6 +11,7 @@
   import { trackEvent, trackIdentity } from "$lib/components/segment.svelte";
   import Textarea from "$lib/components/ui-library/textarea";
   import Header from "$lib/components/header.svelte";
+  import Input from "$lib/components/ui-library/input";
 
   const selfHostingSubject = "Self-hosting";
   const subjects = [
@@ -252,12 +253,13 @@
               </label>
             </li>
           {/if}
-          <li class:error={isFormDirty && !formData.name.valid}>
-            <label for="name">Full Name*</label>
-            <input
+          <li>
+            <Input
+              hasError={isFormDirty && !formData.name.valid}
+              label="Full Name*"
               id="name"
               bind:value={formData.name.value}
-              bind:this={formData.name.el}
+              bind:element={formData.name.el}
               on:change={() => {
                 formData.name.valid =
                   formData.name.value && formData.name.el.checkValidity();
@@ -266,12 +268,13 @@
               autocomplete="name"
             />
           </li>
-          <li class:error={isFormDirty && !formData.workEmail.valid}>
-            <label for="email">Work e-mail* </label>
-            <input
+          <li>
+            <Input
+              hasError={isFormDirty && !formData.workEmail.valid}
+              label="Work e-mail*"
               id="email"
               bind:value={formData.workEmail.value}
-              bind:this={formData.workEmail.el}
+              bind:element={formData.workEmail.el}
               on:change={() => {
                 formData.workEmail.valid =
                   formData.workEmail.value &&
@@ -281,12 +284,13 @@
               autocomplete="email"
             />
           </li>
-          <li class:error={isFormDirty && !formData.companyWebsite.valid}>
-            <label for="company-website">Company website* </label>
-            <input
+          <li>
+            <Input
+              label="Company website*"
+              hasError={isFormDirty && !formData.companyWebsite.valid}
               id="compnay-website"
               bind:value={formData.companyWebsite.value}
-              bind:this={formData.companyWebsite.el}
+              bind:element={formData.companyWebsite.el}
               on:change={() => {
                 formData.companyWebsite.valid =
                   formData.companyWebsite.value &&

@@ -7,6 +7,7 @@
   import type { Form } from "$lib/types/form.type";
   import OpenGraph from "$lib/components/open-graph.svelte";
   import Textarea from "$lib/components/ui-library/textarea";
+  import Input from "$lib/components/ui-library/input";
 
   import { countryList } from "$lib/contents/license-key";
   import type { Email } from "../functions/submit-form";
@@ -97,13 +98,9 @@
   };
 </script>
 
-<style lang="scss">
+<style lang="postcss">
   .title:not(:first-child) {
     margin-top: var(--medium);
-  }
-
-  .half :last-child {
-    @apply mt-macro;
   }
 
   .option {
@@ -132,58 +129,59 @@
   <form on:submit|preventDefault={handleSubmit} novalidate>
     <h2 class="h4 title">Customer Information</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-small">
-      <label
-        class="half"
-        class:error={isFormDirty && !formData.firstName.valid}
-      >
-        First Name*
-        <input
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-small">
+      <div>
+        <Input
+          label="First Name*"
+          hasError={isFormDirty && !formData.firstName.valid}
           name="firstName"
           type="text"
           bind:value={formData.firstName.value}
-          bind:this={formData.firstName.el}
+          bind:element={formData.firstName.el}
           on:change={() => {
             formData.firstName.valid =
               formData.firstName.value && formData.firstName.el.checkValidity();
           }}
           autocomplete="given-name"
         />
-      </label>
-      <label class="half" class:error={isFormDirty && !formData.lastName.valid}>
-        Last Name*
-        <input
+      </div>
+      <div>
+        <Input
+          hasError={isFormDirty && !formData.lastName.valid}
+          label="Last Name*"
           name="lastName"
           type="text"
           bind:value={formData.lastName.value}
-          bind:this={formData.lastName.el}
+          bind:element={formData.lastName.el}
           on:change={() => {
             formData.lastName.valid =
               formData.lastName.value && formData.lastName.el.checkValidity();
           }}
           autocomplete="family-name"
         />
-      </label>
-      <label class="half" class:error={isFormDirty && !formData.email.valid}>
-        Work Email*
-        <input
+      </div>
+      <div>
+        <Input
+          label="Work Email*"
+          hasError={isFormDirty && !formData.email.valid}
           type="email"
           name="email"
           bind:value={formData.email.value}
-          bind:this={formData.email.el}
+          bind:element={formData.email.el}
           on:change={() => {
             formData.email.valid =
               formData.email.value && formData.email.el.checkValidity();
           }}
           autocomplete="email"
         />
-      </label>
-      <label class="half" class:error={isFormDirty && !formData.company.valid}>
-        Company*
-        <input
+      </div>
+      <div>
+        <Input
+          hasError={isFormDirty && !formData.company.valid}
+          label="Company*"
           name="company"
           bind:value={formData.company.value}
-          bind:this={formData.company.el}
+          bind:element={formData.company.el}
           on:change={() => {
             formData.company.valid =
               formData.company.value && formData.company.el.checkValidity();
@@ -191,9 +189,8 @@
           type="text"
           autocomplete="organization"
         />
-      </label>
-
-      <label class="half" class:error={isFormDirty && !formData.country.valid}>
+      </div>
+      <label class:error={isFormDirty && !formData.country.valid}>
         Country*
         <!-- svelte-ignore a11y-no-onchange -->
         <select
@@ -216,10 +213,7 @@
         </select>
       </label>
 
-      <label
-        class="half"
-        class:error={isFormDirty && !formData.noOfDevelopers.valid}
-      >
+      <label class:error={isFormDirty && !formData.noOfDevelopers.valid}>
         Total Number of Developers*
         <select
           class="option"
