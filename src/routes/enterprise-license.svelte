@@ -8,6 +8,7 @@
   import OpenGraph from "$lib/components/open-graph.svelte";
   import Textarea from "$lib/components/ui-library/textarea";
   import Input from "$lib/components/ui-library/input";
+  import Select from "$lib/components/ui-library/select";
 
   import { countryList } from "$lib/contents/license-key";
   import type { Email } from "../functions/submit-form";
@@ -190,50 +191,39 @@
           autocomplete="organization"
         />
       </div>
-      <label class:error={isFormDirty && !formData.country.valid}>
-        Country*
-        <!-- svelte-ignore a11y-no-onchange -->
-        <select
+      <div>
+        <Select
+          hasError={isFormDirty && !formData.country.valid}
+          label="Country*"
           name="country"
           bind:value={formData.country.value}
-          bind:this={formData.country.el}
+          bind:element={formData.country.el}
           on:change={() => {
             formData.country.valid =
               formData.country.value && formData.country.el.checkValidity();
           }}
           class="option"
           autocomplete="country"
-        >
-          <option class="option" value="" disabled selected>Select...</option>
-          {#each countryList as c}
-            <option class="option" value={c}>
-              {c}
-            </option>
-          {/each}
-        </select>
-      </label>
-
-      <label class:error={isFormDirty && !formData.noOfDevelopers.valid}>
-        Total Number of Developers*
-        <select
-          class="option"
+          options={countryList}
+          placeholder="Select..."
+        />
+      </div>
+      <div>
+        <Select
+          placeholder="Select..."
+          options={["1 - 100", "101 - 250", "251 - 500", "500 - 1000", "+1000"]}
+          label="Total Number of Developers*"
+          hasError={isFormDirty && !formData.noOfDevelopers.valid}
           name="noOfDevelopers"
           bind:value={formData.noOfDevelopers.value}
-          bind:this={formData.noOfDevelopers.el}
+          bind:element={formData.noOfDevelopers.el}
           on:change={() => {
             formData.noOfDevelopers.valid =
               formData.noOfDevelopers.value &&
               formData.noOfDevelopers.el.checkValidity();
           }}
-        >
-          <option class="option" value="" disabled selected>Select...</option>
-          {#each ["1 - 100", "101 - 250", "251 - 500", "500 - 1000", "+1000"] as n}
-            <option class="option" value={n}>
-              {n}
-            </option>
-          {/each}
-        </select>
-      </label>
+        />
+      </div>
     </div>
     <div class="mt-macro">
       <Textarea

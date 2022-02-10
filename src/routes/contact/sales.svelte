@@ -13,6 +13,7 @@
   import Header from "$lib/components/header.svelte";
   import Input from "$lib/components/ui-library/input";
   import Checkbox from "$lib/components/ui-library/checkbox";
+  import Select from "$lib/components/ui-library/select";
 
   const selfHostingSubject = "Self-hosting";
   const subjects = [
@@ -227,12 +228,10 @@
             </fieldset>
           </li>
           {#if isCloudPlatformsSelectShown && formData.cloudInfrastructure}
-            <li
-              class:error={isFormDirty && !formData.cloudInfrastructure.valid}
-            >
-              <label class="max-w-md">
-                <!-- svelte-ignore a11y-no-onchange -->
-                <select
+            <li>
+              <div>
+                <Select
+                  hasError={isFormDirty && !formData.cloudInfrastructure.valid}
                   name="cloudInfrastructure"
                   bind:value={formData.cloudInfrastructure.value}
                   on:change={(e) => {
@@ -241,17 +240,10 @@
                       // @ts-ignore
                       e.target.validity.valid;
                   }}
-                >
-                  <option class="option" value=""
-                    >Which cloud infrastructure do you use?</option
-                  >
-                  {#each cloudPlatforms as n}
-                    <option class="option" value={n}>
-                      {n}
-                    </option>
-                  {/each}
-                </select>
-              </label>
+                  options={cloudPlatforms}
+                  placeholder="Which cloud infrastructure do you use?"
+                />
+              </div>
             </li>
           {/if}
           <li>
@@ -301,29 +293,20 @@
               autocomplete="organization"
             />
           </li>
-          <li class:error={isFormDirty && !formData.noOfEngineers.valid}>
-            <label class="max-w-sm">
-              <!-- svelte-ignore a11y-no-onchange -->
-              <select
-                name="noOfEngineers"
-                bind:value={formData.noOfEngineers.value}
-                bind:this={formData.noOfEngineers.el}
-                on:change={() => {
-                  formData.noOfEngineers.valid =
-                    formData.noOfEngineers.value &&
-                    formData.noOfEngineers.el.checkValidity();
-                }}
-              >
-                <option class="option" value=""
-                  >Total number of engineers</option
-                >
-                {#each noOfEngineers as n}
-                  <option class="option" value={n}>
-                    {n}
-                  </option>
-                {/each}
-              </select>
-            </label>
+          <li>
+            <Select
+              placeholder="Total number of engineers"
+              hasError={isFormDirty && !formData.noOfEngineers.valid}
+              name="noOfEngineers"
+              bind:value={formData.noOfEngineers.value}
+              bind:element={formData.noOfEngineers.el}
+              on:change={() => {
+                formData.noOfEngineers.valid =
+                  formData.noOfEngineers.value &&
+                  formData.noOfEngineers.el.checkValidity();
+              }}
+              options={noOfEngineers}
+            />
           </li>
           <li>
             <Textarea
