@@ -63,6 +63,7 @@
     }
 
     const email: Email = {
+      toType: "sales",
       from: {
         email: formData.email.value,
         name: `${formData.firstName.value} ${formData.lastName.value}`,

@@ -17,13 +17,14 @@
 
   const studentUnlimitedSubject = "Educational Discount Verification";
 
+  const otherSubject = "Other";
   const subjects = [
     "Abuse Report",
     "Billing",
     studentUnlimitedSubject,
     "Self-hosting Gitpod",
     "Open Source Sponsorship",
-    "Other",
+    otherSubject,
   ];
 
   let isStudentEmailNoteShown: boolean = false;
@@ -66,6 +67,13 @@
   let isEmailSent = false;
 
   $: isFormValid = Object.values(formData).every((field) => field.valid);
+
+  const handleClick = () => {
+    if (!formData.selectedSubject.value) {
+      formData.selectedSubject.value = otherSubject;
+      formData.selectedSubject.valid = true;
+    }
+  };
 
   const handleSubmit = async () => {
     isFormDirty = true;
@@ -266,6 +274,7 @@
           </li>
           <li>
             <button
+              on:click={handleClick}
               type="submit"
               class="btn"
               disabled={isFormDirty && !isFormValid}>Send message</button

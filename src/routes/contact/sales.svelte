@@ -16,11 +16,12 @@
   import Select from "$lib/components/ui-library/select";
 
   const selfHostingSubject = "Self-hosting";
+  const otherSubject = "Other";
   const subjects = [
     selfHostingSubject,
     "Educational Discount",
     "Reselling",
-    "Other",
+    otherSubject,
   ];
   const cloudPlatforms = [
     "Amazon Elastic Kubernetes Service (EKS)",
@@ -88,6 +89,17 @@
   let isEmailSent = false;
 
   $: isFormValid = Object.values(formData).every((field) => field.valid);
+
+  const handleClick = () => {
+    if (formData.cloudInfrastructure) {
+      formData.cloudInfrastructure.valid = true;
+    }
+
+    if (!formData.selectedSubject.value) {
+      formData.selectedSubject.value = otherSubject;
+      formData.selectedSubject.valid = true;
+    }
+  };
 
   const handleSubmit = async () => {
     isFormDirty = true;
@@ -342,6 +354,7 @@
             <button
               type="submit"
               class="btn"
+              on:click={handleClick}
               disabled={isFormDirty && !isFormValid}>Send message</button
             >
           </li>
