@@ -1,9 +1,10 @@
 <script lang="ts">
   let className: string = "";
-  export let checked: boolean;
+  export let checked: boolean = false;
   export let label: string = "";
   export let element: HTMLElement = null;
   export let hasError: boolean = false;
+  export let disabled: boolean = false;
   export { className as class };
 </script>
 
@@ -27,13 +28,27 @@
 
   label:hover::before,
   label:focus::before {
-    @apply border-dark-grey;
+    @apply border-black;
+  }
+
+  .disabled {
+    @apply pointer-events-none border-divider;
+  }
+
+  .error + label::before {
+    @apply text-error border-error;
+  }
+
+  .disabled + label::before {
+    @apply text-error border-error;
   }
 </style>
 
 <input
-  class="hidden absolute box-border text-[#000000] {className}"
+  class="hidden absolute box-border text-black {className}"
   class:error={hasError}
+  class:disabled
+  {disabled}
   id={label}
   bind:checked
   bind:this={element}
@@ -43,7 +58,7 @@
 />
 {#if label}
   <label
-    class="flex before:text-transparent before:content-[''] "
+    class="flex cursor-pointer text-dark-grey mb-2"
     class:error={hasError}
     for={label}>{@html label}</label
   >

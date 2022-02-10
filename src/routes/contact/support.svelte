@@ -13,6 +13,7 @@
   import Header from "$lib/components/header.svelte";
   import Textarea from "$lib/components/ui-library/textarea";
   import Input from "$lib/components/ui-library/input";
+  import Checkbox from "$lib/components/ui-library/checkbox";
 
   const studentUnlimitedSubject = "Educational Discount Verification";
 
@@ -250,22 +251,18 @@
               rows="10"
             />
           </li>
-          <li class:error={isFormDirty && !formData.consent.valid}>
-            <input
-              id="consent"
+          <li>
+            <Checkbox
+              hasError={isFormDirty && !formData.consent.valid}
+              label="I consent to having this website store my submitted information so that a support staff can respond to my inquiry."
               bind:checked={formData.consent.checked}
-              bind:this={formData.consent.el}
+              bind:element={formData.consent.el}
               on:change={() => {
                 formData.consent.valid =
                   formData.consent.checked &&
                   formData.consent.el.validity.valid;
               }}
-              type="checkbox"
             />
-            <label for="consent"
-              >I consent to having this website store my submitted information
-              so that a support staff can respond to my inquiry.</label
-            >
           </li>
           <li>
             <button
