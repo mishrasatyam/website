@@ -41,7 +41,7 @@
     on:change
     bind:value
     bind:this={element}
-    class="bg-off-white text-[#000000] box-border w-full rounded-lg py-2 px-4 border-[1px] border-divider {className}"
+    class="bg-off-white text-[#000000] box-border w-full rounded-lg py-2 px-4 border-[1px] border-divider placeholder:text-dark-grey {className}"
     type="email"
     {...$$restProps}
   />{/if}

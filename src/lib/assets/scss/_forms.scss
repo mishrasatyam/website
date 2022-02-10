@@ -20,15 +20,8 @@ legend {
   margin-bottom: 0.5rem;
 }
 
-form li {
-  margin-bottom: 2rem;
-}
-fieldset,
 [type="checkbox"] + label {
   display: flex;
-}
-fieldset {
-  flex-flow: row wrap;
 }
 legend {
   flex: 100%;
@@ -83,8 +76,4 @@ legend {
   background-color: var(--sand-dark);
   color: var(--dark-gray);
   cursor: default;
-}
-
-::placeholder {
-  @apply text-dark-grey !important;
 }

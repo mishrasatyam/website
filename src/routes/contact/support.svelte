@@ -173,9 +173,9 @@
     {:else}
       <form on:submit|preventDefault={handleSubmit} novalidate>
         <h2 class="h3 text-center">Send us a message</h2>
-        <ul>
+        <ul class="space-y-8">
           <li class:error={isFormDirty && !formData.selectedSubject.valid}>
-            <fieldset>
+            <fieldset class="flex">
               <legend>Please choose a subject*</legend>
               <ul>
                 {#each subjects as subject, index}

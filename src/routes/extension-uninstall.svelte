@@ -83,6 +83,11 @@
   form li {
     @apply mb-0;
   }
+
+  fieldset {
+    display: flex;
+    flex-flow: row wrap;
+  }
 </style>
 
 <OpenGraph

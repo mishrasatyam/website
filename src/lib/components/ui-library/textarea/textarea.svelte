@@ -28,7 +28,7 @@
   bind:value
   bind:this={element}
   class:error={hasError}
-  class="whitespace-pre-wrap resize-none bg-transparent text-[#000000] box-border w-full rounded-lg py-2 px-4 border-[1px] border-divider {className}"
+  class="whitespace-pre-wrap resize-none bg-transparent text-[#000000] box-border w-full rounded-lg py-2 px-4 border-[1px] border-divider placeholder:text-dark-grey {className}"
   {...$$restProps}
 />
 {#if hasError}
