@@ -42,17 +42,17 @@
     {/each}
   </div>
   <div
-    class="flex items-center px-xx-small mt-xx-small lg:mt-small text-left quote"
+    class="flex items-center justify-center px-xx-small mt-xx-small lg:mt-small text-left quote"
   >
     <div>
       <img
         src={selectedQuote.img.src}
         alt={selectedQuote.img.alt}
-        class="w-64 sm:max-w-xs rounded-3xl lg:max-w-sm xl:max-w-md lg:w-full mx-auto"
+        class="w-56 sm:max-w-xs rounded-3xl lg:max-w-sm xl:max-w-md  mx-auto"
       />
     </div>
     <div
-      class="text flex-1 max-w-lg py-xx-small px-xx-small sm:pl-x-small lg:pl-small lg:pr-0 mx-auto"
+      class="text flex justify-center flex-col flex-1 max-w-lg py-xx-small px-xx-small sm:pl-x-small lg:pl-small lg:pr-0"
     >
       <p class="text-large">
         &ldquo;{selectedQuote.text}&rdquo;
@@ -61,6 +61,11 @@
       <p class="font-bold mt-xx-small">
         {selectedQuote.author}, {selectedQuote.jobTitle}
       </p>
+      {#if selectedQuote.link}
+        <div class="text-center mt-xx-small">
+          <a href={selectedQuote.link} class="btn">View Customer Story</a>
+        </div>
+      {/if}
     </div>
   </div>
 </div>

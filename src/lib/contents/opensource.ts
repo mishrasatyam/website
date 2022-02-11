@@ -20,6 +20,7 @@ export const quotes: Quote[] = [
       src: "/svg/opensource/redwood.svg",
       alt: "RedwoodJS",
     },
+    link: "/customers/redwoodjs",
     img: {
       src: "/images/opensource/mojombo.jpg",
       alt: "",
