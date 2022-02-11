@@ -72,6 +72,8 @@
         curr instanceof HTMLButtonElement ||
         curr instanceof HTMLAnchorElement ||
         (curr instanceof HTMLDivElement && curr.onclick) ||
+        (curr instanceof HTMLInputElement &&
+          curr.classList.contains("toggle")) ||
         (curr instanceof HTMLDetailsElement && !curr.open)
       ) {
         trackButtonOrAnchor(curr);
@@ -153,7 +155,6 @@
     if (trackingMsg.dnt) {
       return;
     }
-
     trackEvent("website_clicked", trackingMsg);
   };
 
