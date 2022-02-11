@@ -57,9 +57,7 @@
   {...$$restProps}
 />
 {#if label}
-  <label
-    class="flex cursor-pointer text-dark-grey mb-2"
-    class:error={hasError}
-    for={label}>{@html label}</label
+  <label class="flex cursor-pointer text-dark-grey mt-1 mb-2" for={label}
+    >{@html label}</label
   >
 {/if}

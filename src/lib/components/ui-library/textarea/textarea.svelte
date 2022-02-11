@@ -32,7 +32,7 @@
   {...$$restProps}
 />
 {#if hasError}
-  <legend class:error={hasError} class="text-xs block mb-2"
+  <legend class:error={hasError} class="text-xs block mt-1 mb-2"
     >Please fill out the {name ? name : ""} field</legend
   >
 {/if}

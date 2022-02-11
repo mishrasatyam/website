@@ -50,7 +50,7 @@
 </select>
 
 {#if hasError}
-  <legend class:error={hasError} class="block text-dark-grey text-xs mb-2"
+  <legend class:error={hasError} class="block text-dark-grey text-xs mt-1 mb-2"
     >Please select a value</legend
   >
 {/if}
