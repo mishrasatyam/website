@@ -21,7 +21,6 @@
   import SpinUp from "$lib/components/index/spin-up.svelte";
   import Section from "$lib/components/section.svelte";
   import Resources from "$lib/components/resources.svelte";
-  import Checkbox from "$lib/components/ui-library/checkbox";
 </script>
 
 <OpenGraph
@@ -54,4 +53,3 @@
 />
 <GetStarted />
 <SpinUp />
-<Checkbox label="Test" checked={false} />

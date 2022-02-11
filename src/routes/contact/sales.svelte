@@ -263,6 +263,7 @@
               hasError={isFormDirty && !formData.name.valid}
               label="Full Name*"
               id="name"
+              name="full-name"
               bind:value={formData.name.value}
               bind:element={formData.name.el}
               on:change={() => {
@@ -278,6 +279,7 @@
               hasError={isFormDirty && !formData.workEmail.valid}
               label="Work e-mail*"
               id="email"
+              name="e-mail"
               bind:value={formData.workEmail.value}
               bind:element={formData.workEmail.el}
               on:change={() => {
@@ -294,6 +296,7 @@
               label="Company website*"
               hasError={isFormDirty && !formData.companyWebsite.valid}
               id="compnay-website"
+              name="website"
               bind:value={formData.companyWebsite.value}
               bind:element={formData.companyWebsite.el}
               on:change={() => {
@@ -324,6 +327,7 @@
             <Textarea
               label="Your message*"
               id="message"
+              name="message"
               hasError={isFormDirty && !formData.message.valid}
               bind:value={formData.message.value}
               bind:element={formData.message.el}

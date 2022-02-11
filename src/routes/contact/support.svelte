@@ -214,6 +214,7 @@
               hasError={isFormDirty && !formData.name.valid}
               label="Name*"
               id="name"
+              name="name"
               bind:value={formData.name.value}
               bind:element={formData.name.el}
               on:change={() => {
@@ -234,6 +235,7 @@
             <Input
               hasError={isFormDirty && !formData.email.valid}
               id="email"
+              name="e-mail"
               bind:value={formData.email.value}
               bind:element={formData.email.el}
               on:change={() => {
@@ -248,6 +250,7 @@
             <Textarea
               id="message"
               label="Your message*"
+              name="message"
               hasError={isFormDirty && !formData.message.valid}
               bind:value={formData.message.value}
               bind:element={formData.message.el}

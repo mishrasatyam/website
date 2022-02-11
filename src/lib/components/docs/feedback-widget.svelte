@@ -85,6 +85,7 @@
               label="Feedback"
               bind:value={note}
               id="note"
+              name="feedback"
               width="100%"
               placeholder="Your feedback..."
               aria-label="Feedback input"

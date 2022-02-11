@@ -166,7 +166,7 @@
           placeholder="Do you have any other feedback?"
           id="otherFeedback"
           hasError={isFormDirty && !formData.otherFeedback.valid}
-          name="otherFeedback"
+          name="feedback"
           bind:value={formData.otherFeedback.value}
           bind:element={formData.otherFeedback.el}
           cols="20"

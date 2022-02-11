@@ -132,7 +132,7 @@
         <Input
           label="First Name*"
           hasError={isFormDirty && !formData.firstName.valid}
-          name="firstName"
+          name="first-name"
           type="text"
           bind:value={formData.firstName.value}
           bind:element={formData.firstName.el}
@@ -147,7 +147,7 @@
         <Input
           hasError={isFormDirty && !formData.lastName.valid}
           label="Last Name*"
-          name="lastName"
+          name="last-name"
           type="text"
           bind:value={formData.lastName.value}
           bind:element={formData.lastName.el}
@@ -163,7 +163,7 @@
           label="Work Email*"
           hasError={isFormDirty && !formData.email.valid}
           type="email"
-          name="email"
+          name="e-mail"
           bind:value={formData.email.value}
           bind:element={formData.email.el}
           on:change={() => {
