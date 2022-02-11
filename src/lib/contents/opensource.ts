@@ -62,11 +62,6 @@ export const features: Feature[] = [
     previewComponent: Workspaces,
   },
   {
-    ...codeAnywhereFeature,
-    paragraph:
-      "No need for over powered laptops, a chrome book and <a href='https://ghuntley.com/anywhere'>even an iPad</a> will work just fine. Everyone can contribute even if they don't have access to powerful (expensive) computers.",
-  },
-  {
     ...multiTrackDevelopmentFeature,
     paragraph:
       "You can have multiple workspaces running at the same time. Start your day by opening each new pull-request in seperate side by side workspaces. Thanks to <a href='https://www.youtube.com/watch?v=ZtlJ0PakUHQ'>pre-builds</a> contributions are already compiled and ready to go.",
@@ -82,6 +77,11 @@ export const features: Feature[] = [
       narrow: true,
       skipToEnd: true,
     },
+  },
+  {
+    ...codeAnywhereFeature,
+    paragraph:
+      "No need for over powered laptops, a chrome book and <a href='https://ghuntley.com/anywhere'>even an iPad</a> will work just fine. Everyone can contribute even if they don't have access to powerful (expensive) computers.",
   },
 ];
 
